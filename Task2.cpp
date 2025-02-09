@@ -11,7 +11,7 @@ int main() {
         cout << "myShell> ";
         getline(cin, input);
 
-        // Quit condition1
+        // Quit condition
         if (input == "Quit!!!") {
             cout << "Goodbye..." << endl;
             break;

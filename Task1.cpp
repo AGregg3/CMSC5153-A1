@@ -1,4 +1,8 @@
-//initial code from 153
+// Including the initial parent process, how many processes are created by
+// the program shown in Figure 3.31?
+
+
+//initial code from 153, Fig. 3.31
 
 #include <stdio.h>
 #include <unistd.h>
