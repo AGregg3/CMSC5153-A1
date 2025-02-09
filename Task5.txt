@@ -1,0 +1,55 @@
+Q5.1) In our lecture, we discussed a web browser and its practice of opening each new website in a separate process. Would the same benefits have 
+		been achieved if instead a browser app had been designed to open each new website in a separate thread? Explain.
+		- If a browser opened each website in a seperate thread instead of a seperate process, then the same benefit woukld not be achieved.
+			• Memory Protection: processes hhave  seperate memory spaces. Threads share the same memory space. This increases the risk of data corruption 
+				and security vulnerabilties
+			• Fault Isolation: Processes offer  better fault isolation since each has its own  execution  enviornment. when a process crashes, the other processes are 
+				unaffected. A thread crash could crash the entire application
+			• Security:
+			• Preformance: 
+
+
+
+
+Q5.2) Describe the actions taken by a kernel to context-switch between processes according to our lecture.
+		- Save state of the current process 
+		- Select the correct process to run
+		- Load the state of the new process
+		-Memory Mapping
+			•
+
+
+
+Q5.3) What happens upon a keystroke? You answer should include all details covered by our lecture and you must use terminology properly.
+		- Hardware Detection
+			•  The keyboard generates an electrical signal upon a keystroke
+		-Interrupt 
+			• The keyboard controller generates an  interrupt signal sent to the CPU
+		- Interrupt Hanfling
+			• The CPU saves its current execution state and jumps to  the interrupt service route for the keyboard
+		- ISR Execution 
+			• The ISR reads the keystroke data from the keyboard buffer. The data may be translated in this process
+		-Transfer to Kernel Buffer
+			• The keystroke  
+		- User Process Notifcation
+			•
+
+
+
+Q5.4) If a user application wants to do an operation involving a privileged instruction, it only can do it via system call. Describe the entire 
+		procedures of invoking a system call in your own words. You should start your description from a lib function call, and not miss any key 
+		points according to our lectures. This question will test whether you fully understand our course contents.
+		- Library Function call
+			• The user application calls a standard library function 
+		- Setup Parameters
+			• The libraty function prepares the parameters required for  the  system call and places them in specific registers
+		- System Call Instruction
+			• The library function executes a special instruction to switch  the CPU to kernel mode
+		- Trap to Kernel Mode
+			• The CPU switches from user mode to  kernel mode, transferrng control of the operating systems call handler.
+		- Kernel System Call Handler
+			• The Kernel validatees parameters and performs the requested privilege operation 
+		- Return to User Mode
+			• The kernel places  the results of the system call in  a predefined register and executes a return-from-interruot instructions 
+		- Library Function Retrun
+			• The library function reads the result and returns it to the user application.
